@@ -12,69 +12,82 @@ class QRHomePage extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color(0xFFF3F4F8), // light pastel background
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: 40),
-              Text(
-                'QR Utility',
-                style: TextStyle(
-                  fontFamily: "ChivoMono",
-                  fontSize: height * 0.045,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF3A3A3C),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const SizedBox(height: 40),
+                Text(
+                  'Mark Me',
+                  style: TextStyle(
+                    fontFamily: "ChivoMono",
+                    fontSize: height * 0.045,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF3A3A3C),
+                  ),
                 ),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                'Choose what you want to do:',
-                style: TextStyle(
-                  fontFamily: "ChivoMono",
-                  fontSize: height * 0.02,
-                  color: Colors.grey,
+                const SizedBox(height: 10),
+                Text(
+                  'Choose what you want to do:',
+                  style: TextStyle(
+                    fontFamily: "ChivoMono",
+                    fontSize: height * 0.02,
+                    color: Colors.grey,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 60),
+                const SizedBox(height: 60),
 
-              // Generate QR
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/generate');
-                },
-                child: QRHomeCard(
-                  title: "Generate QR Code",
-                  icon: Icons.qr_code,
-                  color: Colors.purpleAccent,
+                // Generate QR
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/generate');
+                  },
+                  child: QRHomeCard(
+                    title: "Generate QR Code",
+                    icon: Icons.qr_code,
+                    color: Colors.purpleAccent,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 30),
+                const SizedBox(height: 30),
 
-              // Scan QR
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/scan');
-                },
-                child: QRHomeCard(
-                  title: "Scan QR Code",
-                  icon: Icons.qr_code_scanner,
-                  color: Colors.indigoAccent,
+                // Scan QR
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/scan');
+                  },
+                  child: QRHomeCard(
+                    title: "Scan QR Code",
+                    icon: Icons.qr_code_scanner,
+                    color: Colors.indigoAccent,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 30),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/attan');
-                },
-                child: QRHomeCard(
-                  title: "Your Classes",
-                  icon: Icons.class_,
-                  color: Colors.pink,
+                const SizedBox(height: 30),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/attan');
+                  },
+                  child: QRHomeCard(
+                    title: "Your Classes",
+                    icon: Icons.class_,
+                    color: Colors.pink,
+                  ),
                 ),
-              ),
-            ],
+                const SizedBox(height: 30),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/profile');
+                  },
+                  child: QRHomeCard(
+                    title: "Profile",
+                    icon: Icons.person,
+                    color: Colors.green,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

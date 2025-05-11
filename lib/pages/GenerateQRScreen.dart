@@ -131,6 +131,11 @@ class _GenerateQRScreenState extends State<GenerateQRScreen> {
                   controller: _subjectController,
                   decoration: const InputDecoration(
                     hintText: "Enter Subject Name...",
+                    hintStyle: TextStyle(
+                      fontFamily: "ChivoMono",
+                      fontSize: 16,
+                      color: Colors.grey,
+                    ),
                     border: InputBorder.none,
                   ),
                 ),
@@ -150,6 +155,7 @@ class _GenerateQRScreenState extends State<GenerateQRScreen> {
                   child: const Text(
                     "Generate QR Code",
                     style: TextStyle(
+                      color: Colors.black,
                       fontSize: 16,
                       fontFamily: "ChivoMono",
                       fontWeight: FontWeight.bold,
@@ -158,9 +164,10 @@ class _GenerateQRScreenState extends State<GenerateQRScreen> {
                 ),
               ),
               SizedBox(height: height * 0.06),
-              if (_loading)
-                const CircularProgressIndicator()
-              else if (_qrData.isNotEmpty)
+              // if (_loading)
+              //   const CircularProgressIndicator()
+              // else
+              if (_qrData.isNotEmpty)
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
