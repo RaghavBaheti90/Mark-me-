@@ -69,7 +69,10 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(height: 16),
                 TextButton(
                   onPressed: () => Navigator.pushNamed(context, '/signup'),
-                  child: const Text("Don't have an account? Sign Up"),
+                  child: const Text(
+                    "Don't have an account? Sign Up",
+                    style: TextStyle(fontFamily: "ChivoMono"),
+                  ),
                 ),
               ],
             ),

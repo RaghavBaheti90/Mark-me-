@@ -109,7 +109,7 @@ class _ProfilePageState extends State<ProfilePage> {
       if (students.containsKey(user.uid)) {
         count++;
         sessionList.add({
-          'className': data['className'] ?? 'Unknown',
+          'className': data['className'] ?? 'You are Present on',
           'timestamp': data['timestamp']?.toDate(),
         });
       }
@@ -143,12 +143,23 @@ class _ProfilePageState extends State<ProfilePage> {
           final dateTime = session['timestamp'] as DateTime?;
 
           return ListTile(
-            leading: const Icon(Icons.class_),
-            title: Text(session['className']),
+            leading: const Icon(Icons.check),
+            title: Text(
+              session['className'],
+              style: const TextStyle(
+                fontFamily: 'ChivoMono',
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             subtitle: Text(
               dateTime != null
                   ? '${dateTime.day}/${dateTime.month}/${dateTime.year} – ${dateTime.hour}:${dateTime.minute.toString().padLeft(2, '0')}'
                   : 'Unknown time',
+              style: const TextStyle(
+                fontFamily: 'ChivoMono',
+                fontSize: 14,
+                color: Colors.grey,
+              ),
             ),
           );
         },

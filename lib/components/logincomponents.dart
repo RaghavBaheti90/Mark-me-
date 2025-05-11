@@ -41,14 +41,15 @@ class PrimaryButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.deepPurple,
-        padding: const EdgeInsets.symmetric(vertical: 14),
+        padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 14),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(14),
         ),
       ),
       onPressed: onPressed,
-      child:
-          Text(text, style: const TextStyle(color: Colors.white, fontSize: 16)),
+      child: Text(text,
+          style: const TextStyle(
+              color: Colors.white, fontSize: 16, fontFamily: "ChivoMono")),
     );
   }
 }

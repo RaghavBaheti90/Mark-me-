@@ -35,8 +35,14 @@ class SignupPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text("Create Account",
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
+            const Text(
+              "Create Account",
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'ChivoMono', // Added font family
+              ),
+            ),
             const SizedBox(height: 20),
             CustomTextField(hint: "Name", controller: nameController),
             const SizedBox(height: 16),
@@ -54,7 +60,8 @@ class SignupPage extends StatelessWidget {
             const SizedBox(height: 16),
             TextButton(
               onPressed: () => Navigator.pushNamed(context, '/login'),
-              child: const Text("Already have an account? Login"),
+              child: const Text("Already have an account? Login",
+                  style: TextStyle(fontFamily: "ChivoMono")),
             ),
           ],
         ),
